@@ -5,7 +5,7 @@ registry:
         - GUNICORN_ACCESS_LOG_FILE=/var/log/docker-registry-access.log
         - GUNICORN_ERROR_LOG_FILE=/var/log/docker-registry-server.log
     volumes:
-        - ~/docker-registry/logs/:/var/log/
+        - /home/vagrant/docker-registry/logs/:/var/log/
     ports:
         - "5000:5000"
 
@@ -17,8 +17,8 @@ elasticsearch:
 logstash:
   image: deviantony/elk-logstash
   volumes:
-    - logstash-conf:/etc/logstash/conf.d
-    - ~/docker-registry/logs/:/tmp
+    - /vagrant/scripts/logstash-conf:/etc/logstash/conf.d
+    - home/vagrant/docker-registry/logs/:/tmp
   ports:
     - "5010:5000"
   links:
