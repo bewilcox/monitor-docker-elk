@@ -1,0 +1,3 @@
+172.17.42.1 - - [13/Apr/2015:12:08:30 +0000] "GET /v2/ HTTP/1.1" 404 233 "-" "Go 1.1 package http"
+172.17.42.1 - - [13/Apr/2015:12:08:30 +0000] "GET /v1/_ping HTTP/1.1" 200 1607 "-" "Go 1.1 package http"
+172.17.42.1 - - [13/Apr/2015:12:15:31 +0000] "GET /v1/repositories/mycorp/myname/images HTTP/1.1" 200 304 "-" "docker/1.5.0 go/go1.4.1 git-commit/a8a31ef kernel/3.2.0-23-generic os/linux arch/amd64"

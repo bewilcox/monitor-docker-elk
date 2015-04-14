@@ -1,5 +1,5 @@
 registry:
-    image: registry
+    image: registry:0.9.1
     environment:
         - SEARCH_BACKEND=sqlalchemy
         - GUNICORN_ACCESS_LOG_FILE=/var/log/docker-registry-access.log
@@ -17,14 +17,14 @@ elasticsearch:
 logstash:
   image: deviantony/elk-logstash
   volumes:
-    - /vagrant/scripts/logstash-conf:/etc/logstash/conf.d
-    - home/vagrant/docker-registry/logs/:/tmp
+    - /vagrant/scripts/logstash/logstash-conf:/etc/logstash/conf.d
+    - /home/vagrant/docker-registry/logs/:/tmp
   ports:
     - "5010:5000"
   links:
     - elasticsearch
 
-kibana4:
+kibana:
   image: deviantony/elk-kibana
   ports:
     - "5601:5601"
